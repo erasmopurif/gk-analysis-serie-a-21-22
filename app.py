@@ -1,13 +1,8 @@
 import pandas as pd
-import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
-import seaborn as sns
 from scipy.ndimage import gaussian_filter
 from mplsoccer.pitch import Pitch, VerticalPitch
-from mplsoccer import PyPizza, Radar, FontManager
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from mplsoccer import PyPizza, FontManager
 from io import BytesIO
 from PIL import Image
 import requests
