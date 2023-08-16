@@ -3,7 +3,7 @@
 
 :computer: Author: **Erasmo Purificato** ([Personal Website](https://erasmopurif.com/))
 
-[Link to Streamlit App]
+:globe_with_meridians: [Streamlit App](https://gk-analysis-serie-a-21-22.streamlit.app/)
 
 :warning: ***Important information***
 * *The analysis considers only goalkeepers with at least **800 minutes** played.*
