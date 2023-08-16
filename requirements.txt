@@ -1,5 +1,5 @@
 matplotlib==3.6.0
-mplsoccer==1.2.1
+mplsoccer==1.1.9
 pandas==1.5.1
 Pillow==9.3.0
 Requests==2.31.0
