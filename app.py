@@ -11,6 +11,7 @@ from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from io import BytesIO
 from PIL import Image
 import requests
+from pathlib import Path
 
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -47,7 +48,8 @@ st.markdown("#")
 
 
 def app_description():
-    st.write("Description")
+    readme_md_file = Path("README.md").read_text()
+    st.markdown(readme_md_file, unsafe_allow_html=True)
 
 
 def single_gk_analysis():
@@ -265,7 +267,7 @@ def single_gk_analysis():
     st.markdown("---")
 
     # GK passes and average position on specific match
-    st.markdown("#### Passes Distribution (*no goal kicks*) per Match and Average Position")
+    st.markdown("#### Passes Distribution (*no goal kicks*) per Match and Average Position in Pass Plays")
     st.markdown("For each selected matchday, on the left hand side, the chart displays the **distribution of passes** (*no goal kicks*) made by the goalkeeper. On the opposite side of the chart, the :blue[blue] line (and related point in the pitch) represents the **average position** of the goalkeeper in the pass plays during the selected match, while the :green[green] line represents the **average position** of the goalkeeper in the pass plays during the entire season.")
 
     df_gk_events_id = df_gk_events[df_gk_events["player_id"] == gk_opta_id]
@@ -374,22 +376,6 @@ def single_gk_analysis():
         )
 
         st.pyplot(fig)
-
-    # with gk_avg_pos:
-    #     pitch = VerticalPitch(pitch_type="opta", line_zorder=1, half=True, pitch_color="#0E1117", line_color="#FFFFFF")
-    #     fig, ax = pitch.draw(figsize=(6,6))
-    #     fig.set_facecolor("#0E1117")
-
-    #     pitch.scatter(
-    #         x = 100 - df_passes_match_agg.avg_x,
-    #         y = 100 - df_passes_match_agg.avg_y,
-    #         s = 500,
-    #         edgecolor = "#def5e5",
-    #         color = "#72D4AD",
-    #         zorder = 10,
-    #         ax = ax
-    #     )
-    #     st.pyplot(fig)
 
 
 selected_page = option_menu(
